@@ -8,6 +8,7 @@ Creates recursive folders with depth of 5
 Creates recursive folders with depth of &lt;n>
 
 ## Result
+<pre>
 +---0
 |   +---0
 |   |   +---0
@@ -12117,4 +12118,5 @@ Creates recursive folders with depth of &lt;n>
                 7
                 8
                 9
+</pre>
                 
