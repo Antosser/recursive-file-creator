@@ -1,17 +1,18 @@
 #include <fstream>
 #include <iostream>
 #include <filesystem>
-#include <direct.h>
 #include <string>
 
+int filesize = 0;
+
 void recursivCreate(int depth, int goal, std::string prefix) {
-	_mkdir(prefix.c_str());
+	std::filesystem::create_directory(prefix.c_str());
 	if (depth == goal) {
 		for (int i = 0; i < 10; i++) {
 			std::string path = prefix;
 			path += (i + 48);
 			std::ofstream(path).close();
-			//std::filesystem::resize_file(std::filesystem::path(path), 1);
+			std::filesystem::resize_file(std::filesystem::path(path), filesize);
 		}
 		return;
 	}
@@ -30,6 +31,8 @@ int main(int argc, char** argv) {
 		depth = atoi(argv[1]);
 	else
 		depth = 5;
+	if (argc > 2)
+		filesize = atoi(argv[2]);
 
 	std::filesystem::remove_all("Recursive!\\");
 	recursivCreate(1, depth, "Recursive!\\");
