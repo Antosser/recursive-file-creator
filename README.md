@@ -2,7 +2,7 @@
 Creates a folder with x folders with x folders inside x folder including x folders ... ... ... of x files
 
 ## Syntax
-`recursive-file-creator [-name] [-depth] [-size] [-filecount] [-c] [-bin]`  
+`recursive-file-creator [-name] [-depth] [-size] [-filecount] [-c] [-hex]`  
 Short:  
 `recursive-file-creator [name] [depth] [size]`
 
